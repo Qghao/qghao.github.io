@@ -8,7 +8,7 @@ published: true
 hide-in-home: true
 tags:
 - mysql
-categories: [ Tech ]
+categories: [ 技术文档 ]
 URL: "/2023/03/28/01_基础架构：一条SQL查询语句是如何执行的？"
 ---
 
@@ -24,7 +24,7 @@ mysql> select * from T where ID=10；
 
 下面我给出的是 MySQL 的基本架构示意图，从中你可以清楚地看到 SQL 语句在 MySQL 的各个功能模块中的执行过程。
 
-![img](images/0d2070e8f84c4801adbfa03bda1f98d9.png)
+![img](/images/0d2070e8f84c4801adbfa03bda1f98d9.png)
 
 MySQL 的逻辑架构图
 
@@ -57,7 +57,7 @@ mysql -h$ip -P$port -u$user -p
 
 连接完成后，如果你没有后续的动作，这个连接就处于空闲状态，你可以在 show processlist 命令中看到它。文本中这个图是 show processlist 的结果，其中的 Command 列显示为“Sleep”的这一行，就表示现在系统里面有一个空闲连接。
 
-![img](images/f2da4aa3a672d48ec05df97b9f992fed.png)客户端如果太长时间没动静，连接器就会自动将它断开。这个时间是由参数 wait_timeout 控制的，默认值是 8 小时。
+![img](/images/f2da4aa3a672d48ec05df97b9f992fed.png)客户端如果太长时间没动静，连接器就会自动将它断开。这个时间是由参数 wait_timeout 控制的，默认值是 8 小时。
 
 如果在连接被断开之后，客户端再次发送请求的话，就会收到一个错误提醒： Lost connection to MySQL server during query。这时候如果你要继续，就需要重连，然后再执行请求了。
 

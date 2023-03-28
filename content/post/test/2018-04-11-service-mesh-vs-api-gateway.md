@@ -11,7 +11,7 @@ published: true
 tags:
     - Service Mesh
 URL: "/2018/04/11/service-mesh-vs-api-gateway/"
-categories: [ Tech ]
+categories: [ 技术文档 ]
 ---
 
 ## Service Mesh vs API Gateway

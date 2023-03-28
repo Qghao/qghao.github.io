@@ -8,7 +8,7 @@ published: true
 hide-in-home: true
 tags:
 - mysql
-categories: [ Tech ]
+categories: [ 技术文档 ]
 URL: "/2023/03/28/05_深入浅出索引（下）"
 ---
 
@@ -31,7 +31,7 @@ engine=InnoDB;
 insert into T values(100,1, 'aa'),(200,2,'bb'),(300,3,'cc'),(500,5,'ee'),(600,6,'ff'),(700,7,'gg');
 ```
 
-![img](images/dcda101051f28502bd5c4402b292e38d.png)
+![img](/images/dcda101051f28502bd5c4402b292e38d_images.png)
 
 图 1 **InnoDB** 的索引组织结构
 
@@ -88,7 +88,7 @@ CREATE TABLE `tuser` (
 
 为了直观地说明这个概念，我们用（name，age）这个联合索引来分析。
 
-![img](images/89f74c631110cfbc83298ef27dcd6370.jpg)
+![img](/images/89f74c631110cfbc83298ef27dcd6370.jpg)
 
 图 2 （name，age）索引示意图
 
@@ -132,11 +132,11 @@ mysql> select * from tuser where name like '张 %' and age=10 and ismale=1;
 
 图 3 和图 4，是这两个过程的执行流程图。
 
-![img](images/b32aa8b1f75611e0759e52f5915539ac.jpg)
+![img](/images/b32aa8b1f75611e0759e52f5915539ac.jpg)
 
 图 3 无索引下推执行流程
 
-![img](images/76e385f3df5a694cc4238c7b65acfe1b.jpg)
+![img](/images/76e385f3df5a694cc4238c7b65acfe1b.jpg)
 
 图 4 索引下推执行流程
 

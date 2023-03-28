@@ -8,7 +8,7 @@ published: true
 hide-in-home: true
 tags:
 - mysql
-categories: [ Tech ]
+categories: [ 技术文档 ]
 URL: "/2023/03/28/10_MySQL为什么有时候会选错索引"
 ---
 

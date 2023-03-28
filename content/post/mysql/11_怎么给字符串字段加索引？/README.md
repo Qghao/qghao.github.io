@@ -8,7 +8,7 @@ published: true
 hide-in-home: true
 tags:
 - mysql
-categories: [ Tech ]
+categories: [ 技术文档 ]
 URL: "/2023/03/28/11_怎么给字符串字段加索引？"
 ---
 
@@ -46,11 +46,11 @@ mysql> alter table SUser add index index2(email(6));
 
 那么，这两种不同的定义在数据结构和存储上有什么区别呢？如图 2 和 3 所示，就是这两个索引的示意图。
 
-![img](images/d31da662bee595991862c439a5567eb7.jpg)
+![img](/images/d31da662bee595991862c439a5567eb7.jpg)
 
 图 1 email 索引结构
 
-![img](images/134583875561de914991fc2e192cf842.jpg)
+![img](/images/134583875561de914991fc2e192cf842.jpg)
 
 图 2 email(6) 索引结构
 
@@ -219,4 +219,4 @@ delete 语句删掉了所有的数据，然后再通过 call idata() 插入了 1
 
 这个值的计算方法，我会在后面有文章为你详细讲解。
 
-![img](images/e0e4c8381f3feae4d87958470760d367.png)
+![img](/images/e0e4c8381f3feae4d87958470760d367.png)

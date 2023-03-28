@@ -8,7 +8,7 @@ published: true
 hide-in-home: true
 tags:
 - mysql
-categories: [ Tech ]
+categories: [ 技术文档 ]
 URL: "/2023/03/28/08_事务到底是隔离的还是不隔离的"
 ---
 
@@ -29,7 +29,7 @@ mysql> CREATE TABLE `t` (
 insert into t(id, k) values(1,1),(2,2);
 ```
 
-![img](images/823acf76e53c0bdba7beab45e72e90d6.png)
+![img](/images/823acf76e53c0bdba7beab45e72e90d6.png)
 
 图 1 事务 A、B、C 的执行流程
 
@@ -72,7 +72,7 @@ InnoDB 里面每个事务有一个唯一的事务 ID，叫作 transaction id。�
 
 如图 2 所示，就是一个记录被多个事务连续更新后的状态。
 
-![img](images/68d08d277a6f7926a41cc5541d3dfced.png)
+![img](/images/68d08d277a6f7926a41cc5541d3dfced.png)
 
 图 2 行状态变更图
 
@@ -100,7 +100,7 @@ InnoDB 里面每个事务有一个唯一的事务 ID，叫作 transaction id。�
 
 这个视图数组把所有的 row trx_id 分成了几种不同的情况。
 
-![img](images/882114aaf55861832b4270d44507695e.png)
+![img](/images/882114aaf55861832b4270d44507695e.png)
 
 图 3 数据版本可见性规则
 
@@ -128,7 +128,7 @@ InnoDB 里面每个事务有一个唯一的事务 ID，叫作 transaction id。�
 
 为了简化分析，我先把其他干扰语句去掉，只画出跟事务 A 查询逻辑有关的操作：
 
-![img](images/9416c310e406519b7460437cb0c5c149.png)
+![img](/images/9416c310e406519b7460437cb0c5c149.png)
 
 图 4 事务 A 查询数据逻辑图
 
@@ -168,7 +168,7 @@ InnoDB 里面每个事务有一个唯一的事务 ID，叫作 transaction id。�
 
 你看图 5 中，事务 B 的视图数组是先生成的，之后事务 C 才提交，不是应该看不见 (1,2) 吗，怎么能算出 (1,3) 来？
 
-![img](images/86ad7e8abe7bf16505b97718d8ac149f.png)
+![img](/images/86ad7e8abe7bf16505b97718d8ac149f.png)
 
 图 5 事务 B 更新逻辑图
 
@@ -193,7 +193,7 @@ mysql> select k from t where id=1 for update;
 
 再往前一步，假设事务 C 不是马上提交的，而是变成了下面的事务 C’，会怎么样呢？
 
-![img](images/cda2a0d7decb61e59dddc83ac51efb6e.png)
+![img](/images/cda2a0d7decb61e59dddc83ac51efb6e.png)
 
 图 6 事务 A、B、C'的执行流程
 
@@ -201,7 +201,7 @@ mysql> select k from t where id=1 for update;
 
 这时候，我们在上一篇文章中提到的“两阶段锁协议”就要上场了。事务 C’没提交，也就是说 (1,2) 这个版本上的写锁还没释放。而事务 B 是当前读，必须要读最新版本，而且必须加锁，因此就被锁住了，必须等到事务 C’释放这个锁，才能继续它的当前读。
 
-![img](images/540967ea905e8b63630e496786d84c92.png)
+![img](/images/540967ea905e8b63630e496786d84c92.png)
 
 图 7 事务 B 更新逻辑图（配合事务 C'）
 
@@ -222,7 +222,7 @@ mysql> select k from t where id=1 for update;
 
 下面是读提交时的状态图，可以看到这两个查询语句的创建视图数组的时机发生了变化，就是图中的 read view 框。（注意：这里，我们用的还是事务 C 的逻辑直接提交，而不是事务 C’）
 
-![img](images/18fd5179b38c8c3804b313c3582cd1be.jpg)
+![img](/images/18fd5179b38c8c3804b313c3582cd1be.jpg)
 
 图 8 读提交隔离级别下的事务状态图
 
@@ -259,7 +259,7 @@ mysql> CREATE TABLE `t` (
 insert into t(id, c) values(1,1),(2,2),(3,3),(4,4);
 ```
 
-![img](images/9b8fe7cf88c9ba40dc12e93e36c3060b.png)复现出来以后，请你再思考一下，在实际的业务开发中有没有可能碰到这种情况？你的应用代码会不会掉进这个“坑”里，你又是怎么解决的呢？
+![img](/images/9b8fe7cf88c9ba40dc12e93e36c3060b.png)复现出来以后，请你再思考一下，在实际的业务开发中有没有可能碰到这种情况？你的应用代码会不会掉进这个“坑”里，你又是怎么解决的呢？
 
 你可以把你的思考和观点写在留言区里，我会在下一篇文章的末尾和你讨论这个问题。感谢你的收听，也欢迎你把这篇文章分享给更多的朋友一起阅读。
 

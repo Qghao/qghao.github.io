@@ -8,7 +8,7 @@ published: true
 hide-in-home: true
 tags:
 - mysql
-categories: [ Tech ]
+categories: [ 技术文档 ]
 URL: "/2023/03/28/09_普通索引和唯一索引，应该怎么选择？"
 ---
 
@@ -28,7 +28,7 @@ select name from CUser where id_card = 'xxxxxxxyyyyyyzzzzz';
 
 简单起见，我们还是用第 **4** 篇文章 [**深入浅出索引（上）**]中的例子来说明，假设字段 **k** 上的值都不重复。
 
-![img](images/1ed9536031d6698570ea175a7b7f9a46.png)
+![img](/images/1ed9536031d6698570ea175a7b7f9a46.png)
 
 图 1 InnoDB 的索引组织结构
 
@@ -127,7 +127,7 @@ mysql> insert into t(id,k) values(id1,k1),(id2,k2);
 
 这里，我们假设当前 k 索引树的状态，查找到位置后，k1 所在的数据页在内存 (InnoDB buffer pool) 中，k2 所在的数据页不在内存中。如图 2 所示是带 change buffer 的更新状态图。
 
-![img](images/980a2b786f0ea7adabef2e64fb4c4ca3.png)
+![img](/images/980a2b786f0ea7adabef2e64fb4c4ca3.png)
 
 图 2 带 change buffer 的更新过程
 
@@ -149,7 +149,7 @@ mysql> insert into t(id,k) values(id1,k1),(id2,k2);
 
 如果读语句发生在更新语句后不久，内存中的数据都还在，那么此时的这两个读操作就与系统表空间（ibdata1）和 redo log（ib_log_fileX）无关了。所以，我在图中就没画出这两部分。
 
-![img](images/6dc743577af1dbcbb8550bddbfc5f98e.png)
+![img](/images/6dc743577af1dbcbb8550bddbfc5f98e.png)
 
 图 3 带 change buffer 的读过程
 
@@ -183,11 +183,11 @@ mysql> insert into t(id,k) values(id1,k1),(id2,k2);
 
 上期的问题是：如何构造一个“数据无法修改”的场景。评论区里已经有不少同学给出了正确答案，这里我再描述一下。
 
-![img](images/be7a4d8af04cdf93aaa11108933559ae.png)这样，session A 看到的就是我截图的效果了。
+![img](/images/be7a4d8af04cdf93aaa11108933559ae.png)这样，session A 看到的就是我截图的效果了。
 
 其实，还有另外一种场景，同学们在留言区都还没有提到。
 
-![img](images/e24a0689571337959138d787c408defa.png)
+![img](/images/e24a0689571337959138d787c408defa.png)
 
 这个操作序列跑出来，session A 看的内容也是能够复现我截图的效果的。这个 session B’启动的事务比 A 要早，其实是上期我们描述事务版本的可见性规则时留的彩蛋，因为规则里还有一个“活跃事务的判断”，我是准备留到这里再补充的。
 

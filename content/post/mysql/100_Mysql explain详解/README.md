@@ -8,7 +8,7 @@ published: true
 hide-in-home: true
 tags:
 - mysql
-categories: [ Tech ]
+categories: [ 技术文档 ]
 URL: "/2023/03/28/100_Mysql explain详解"
 ---
 
@@ -36,7 +36,7 @@ AND s.uid=f.uid
 
 执行后的结果，如下图所示
 
-![img](images/SouthEast.jpeg)
+![img](/images/SouthEast.jpeg)
 
 这里面有下面几个结果，下面我们一个个来看一下
 
@@ -50,7 +50,7 @@ EXPLAIN SELECT * FROM (SELECT* FROM uchome_space LIMIT 10)AS s
 
 它的执行结果为：
 
-![img](images/SouthEast-16598858078253.jpeg)
+![img](/images/SouthEast-16598858078253.jpeg)
 
 可以看到这时的id变化了
 
@@ -68,7 +68,7 @@ explain select  *  from uchome_space limit 10 union select * from uchome_space l
 
 会有如下结果
 
-![img](images/SouthEast-16598860821086.jpeg)
+![img](/images/SouthEast-16598860821086.jpeg)
 
 第二条语句使用了**union**
 
@@ -97,7 +97,7 @@ explain select * from `asj_admin_log` limit 1
 
 结果如下
 
-![img](images/SouthEast-16598872012339.jpeg)
+![img](/images/SouthEast-16598872012339.jpeg)
 
 虽然只搜索一条数据，但是因为没有用到指定的索引，所以不会使用 **const**，继续看下面这个
 
@@ -105,7 +105,7 @@ explain select * from `asj_admin_log` limit 1
 explain SELECT * FROM `asj_admin_log` where log_id = 111
 ```
 
-![img](images/SouthEast-165988724784912.jpeg)
+![img](/images/SouthEast-165988724784912.jpeg)
 
 **log_id** 是主键，所以使用了 **const**。所以说可以理解为 **const** 是最优化的
 
@@ -119,7 +119,7 @@ explain select * from uchome_spacefield,uchome_space where uchome_spacefield.uid
 
 得到的结果是下图所示。很明显，**mysql** 使用 **eq_ref** 联接来处理 **uchome_space** 表。
 
-![img](images/SouthEast-165988739401915.png)
+![img](/images/SouthEast-165988739401915.png)
 
 ### ref
 
@@ -167,7 +167,7 @@ ref列显示使用哪个列或常数与key一起从表中选择行
 EXPLAIN SELECT ads.id FROM ads, city WHERE   city.city_id = 8005   AND ads.status = 'online'   AND city.ads_id=ads.id ORDER BY ads.id desc
 ```
 
-![image-20220829092000079](images/image-20220829092000079.png)
+![image-20220829092000079](/images/image-20220829092000079.png)
 
 这条语句会使用using temporary,而下面这条语句则不会
 
@@ -175,7 +175,7 @@ EXPLAIN SELECT ads.id FROM ads, city WHERE   city.city_id = 8005   AND ads.statu
 EXPLAIN SELECT ads.id FROM ads, city WHERE   city.city_id = 8005   AND ads.status = 'online'   AND city.ads_id=ads.id ORDER BYcity.ads_id desc
 ```
 
-![image-20220829092032304](images/image-20220829092032304.png)
+![image-20220829092032304](/images/image-20220829092032304.png)
 
 这是为什么呢？他俩之间只是一个order by不同，MySQL 表关联的算法是 Nest Loop Join，是通过驱动表的结果集作为循环基础数据，然后一条一条地通过该结果集中的数据作为过滤条件到下一个表中查询数据，然后合并结果。EXPLAIN 结果中，第一行出现的表就是驱动表（Important!）以上两个查询语句，驱动表都是 city，如上面的执行计划所示！
 

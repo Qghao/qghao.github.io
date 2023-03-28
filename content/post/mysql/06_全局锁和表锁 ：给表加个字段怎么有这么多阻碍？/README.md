@@ -8,7 +8,7 @@ published: true
 hide-in-home: true
 tags:
 - mysql
-categories: [ Tech ]
+categories: [ 技术文档 ]
 URL: "/2023/03/28/06_全局锁和表锁 ：给表加个字段怎么有这么多阻碍？"
 ---
 
@@ -39,7 +39,7 @@ URL: "/2023/03/28/06_全局锁和表锁 ：给表加个字段怎么有这么多�
 
 如果时间顺序上是先备份账户余额表 (u_account)，然后用户购买，然后备份用户课程表 (u_course)，会怎么样呢？你可以看一下这个图：
 
-![img](images/cbfd4a0bbb1210792064bcea4e49b0cd.png)
+![img](/images/cbfd4a0bbb1210792064bcea4e49b0cd.png)
 
 图 1 业务和备份状态图
 
@@ -93,7 +93,7 @@ MySQL 里面表级别的锁有两种：一种是表锁，一种是元数据锁�
 
 > 备注：这里的实验环境是 MySQL 5.6。
 
-![img](images/7cf6a3bf90d72d1f0fc156ececdfb0ce.jpg)
+![img](/images/7cf6a3bf90d72d1f0fc156ececdfb0ce.jpg)
 
 我们可以看到 session A 先启动，这时候会对表 t 加一个 MDL 读锁。由于 session B 需要的也是 MDL 读锁，因此可以正常执行。
 

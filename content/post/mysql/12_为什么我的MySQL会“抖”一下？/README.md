@@ -8,7 +8,7 @@ published: true
 hide-in-home: true
 tags:
 - mysql
-categories: [ Tech ]
+categories: [ 技术文档 ]
 URL: "/2023/03/28/12_为什么我的MySQL会“抖”一下？"
 ---
 
@@ -30,7 +30,7 @@ URL: "/2023/03/28/12_为什么我的MySQL会“抖”一下？"
 
 接下来，我们用一个示意图来展示一下“孔乙己赊账”的整个操作过程。假设原来孔乙己欠账 10 文，这次又要赊 9 文。
 
-![img](images/349cfab9e4f5d2a75e07b2132a301fda.jpeg)
+![img](/images/349cfab9e4f5d2a75e07b2132a301fda.jpeg)
 
 图 1 “孔乙己赊账”更新和 flush 过程
 
@@ -42,7 +42,7 @@ URL: "/2023/03/28/12_为什么我的MySQL会“抖”一下？"
 
 - 第一种场景是，粉板满了，记不下了。这时候如果再有人来赊账，掌柜就只得放下手里的活儿，将粉板上的记录擦掉一些，留出空位以便继续记账。当然在擦掉之前，他必须先将正确的账目记录到账本中才行。 这个场景，对应的就是 InnoDB 的 redo log 写满了。这时候系统会停止所有更新操作，把 checkpoint 往前推进，redo log 留出空间可以继续写。我在第二讲画了一个 redo log 的示意图，这里我改成环形，便于大家理解。
 
-![img](images/a25bdbbfc2cfc5d5e20690547fe7f2e5.jpg)
+![img](/images/a25bdbbfc2cfc5d5e20690547fe7f2e5.jpg)
 
 图 2 redo log 状态图
 
@@ -120,7 +120,7 @@ InnoDB 每次写入的日志都有一个序号，当前写入的序号跟 checkp
 
 上述的计算流程比较抽象，不容易理解，所以我画了一个简单的流程图。图中的 F1、F2 就是上面我们通过脏页比例和 redo log 写入速度算出来的两个值。
 
-![img](images/cc44c1d080141aa50df6a91067475374.png)
+![img](/images/cc44c1d080141aa50df6a91067475374.png)
 
 图 3 InnoDB 刷脏页速度策略
 

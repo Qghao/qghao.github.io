@@ -8,7 +8,7 @@ published: true
 hide-in-home: true
 tags:
 - mysql
-categories: [ Tech ]
+categories: [ 技术文档 ]
 URL: "/2023/03/28/14_count()这么慢，我该怎么办？"
 ---
 
@@ -43,7 +43,7 @@ URL: "/2023/03/28/14_count()这么慢，我该怎么办？"
 
 我们假设从上到下是按照时间顺序执行的，同一行语句是在同一时刻执行的。
 
-![img](images/5e716ba1d464c8224c1c1f36135d0e97.png)
+![img](/images/5e716ba1d464c8224c1c1f36135d0e97.png)
 
 图 1 会话 A、B、C 的执行流程
 
@@ -98,7 +98,7 @@ Redis 的数据不能永久地留在内存里，所以你会找一个地方把�
 
 我们一起来看看这个时序图。
 
-![img](images/39898af053695dad37227d71ae288e33.png)
+![img](/images/39898af053695dad37227d71ae288e33.png)
 
 图 2 会话 A、B 执行时序图
 
@@ -108,7 +108,7 @@ Redis 的数据不能永久地留在内存里，所以你会找一个地方把�
 
 你一定会说，这是因为我们执行新增记录逻辑时候，是先写数据表，再改 Redis 计数。而读的时候是先读 Redis，再读数据表，这个顺序是相反的。那么，如果保持顺序一样的话，是不是就没问题了？我们现在把会话 A 的更新顺序换一下，再看看执行结果。
 
-![img](images/5c2f786beae1d8917cdc5033b7bf0bdb.png)
+![img](/images/5c2f786beae1d8917cdc5033b7bf0bdb.png)
 
 图 3 调整顺序后，会话 A、B 的执行时序图
 
@@ -134,7 +134,7 @@ Redis 的数据不能永久地留在内存里，所以你会找一个地方把�
 
 所谓以子之矛攻子之盾，现在我们就利用“事务”这个特性，把问题解决掉。
 
-![img](images/9e4170e2dfca3524eb5e92adb8647de3.png)
+![img](/images/9e4170e2dfca3524eb5e92adb8647de3.png)
 
 图 4 会话 A、B 的执行时序图
 

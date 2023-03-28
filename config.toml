@@ -1,4 +1,4 @@
-baseurl = "https://zhaohuabing.com"
+baseurl = "https://qghao.github.io"
 title = "国强的Blog"
 theme = "hugo-theme-cleanwhite"
 languageCode = "zh-cn"
@@ -8,13 +8,14 @@ googleAnalytics = ""
 preserveTaxonomyNames = true
 paginate = 5 #frontpage pagination
 hasCJKLanguage = true
-
+[removeDanglingConfigs]
+  enable = true
 [outputs]
 home = ["HTML", "RSS", "Algolia"]
 
 [params]
   header_image = "img/home-bg-jeep.jpg"
-  description = "赵与你一起发现更大的世界。"
+  description = "与你一起发现更大的世界。"
   keyword = " PaaS, Istio, Kubernetes, Microservice"
   slogan = "路在脚下，心向远方"
 
@@ -53,7 +54,8 @@ home = ["HTML", "RSS", "Algolia"]
   # Follow https://twikoo.js.org/ to set up your own env_id
   twikoo_env_id = ""
 
-  #Enable wechat pay & alipay to allow readers send reward money if they like the articles 
+  #Enable wechat pay & alipay to allow readers send reward money if they like the articles
+  #是否开启打赏功能
   reward = false
   # reward_guide = "如果这篇文章对你有用,请随意打赏" 
 
@@ -79,23 +81,29 @@ home = ["HTML", "RSS", "Algolia"]
   [[params.friend_link]]
   title = "磊叔的博客"
   href =  "http://www.glmapper.com/"
+  [[params.friend_link]]
+  title = "赵化冰的博客"
+  href =  "https://www.zhaohuabing.com/"
+  [[params.friend_link]]
+  title = "陌溪的博客"
+  href =  "http://note.moguit.cn/"
 
-  [[params.bookmark_link]]
-  title =  "Martin Fowler"
-  href =  "https://martinfowler.com"
-  [[params.bookmark_link]]
-  title = "ServiceMesher"
-  href =  "http://www.servicemesher.com"
-  [[params.bookmark_link]]
-  title =  "Pxhere"
-  href = "https://pxhere.com"
-  [[params.bookmark_link]]
-  title = "unsplash"
-  href = "https://unsplash.com"
+#   [[params.bookmark_link]]
+#   title =  "Martin Fowler"
+#   href =  "https://martinfowler.com"
+#   [[params.bookmark_link]]
+#   title = "ServiceMesher"
+#   href =  "http://www.servicemesher.com"
+#   [[params.bookmark_link]]
+#   title =  "Pxhere"
+#   href = "https://pxhere.com"
+#   [[params.bookmark_link]]
+#   title = "unsplash"
+#   href = "https://unsplash.com"
 
 # 可以在这里扩展菜单
   [[params.addtional_menus]]
-  title =  "ARCHIVE"
+  title =  "归档"
   href =  "/archive/"
 #   [[params.addtional_menus]]
 #   title =  "NOTES"
