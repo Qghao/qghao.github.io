@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="zh-cn">
 <head>
 	<meta name="generator" content="Hugo 0.97.3" />
+    <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     
-    <meta property="og:site_name" content="Huabing Blog">
+    <meta property="og:site_name" content="国强的Blog">
     <meta property="og:type" content="article">
 
     
@@ -22,9 +23,9 @@
     
 
     
-    <meta name="description" content="赵化冰，程序员, 开源爱好者，生活探险家 | 这里是 赵化冰 的博客，与你一起发现更大的世界。">
-    <meta property="og:description" content="赵化冰，程序员, 开源爱好者，生活探险家 | 这里是 赵化冰 的博客，与你一起发现更大的世界。" />
-    <meta property="twitter:description" content="赵化冰，程序员, 开源爱好者，生活探险家 | 这里是 赵化冰 的博客，与你一起发现更大的世界。" />
+    <meta name="description" content="赵与你一起发现更大的世界。">
+    <meta property="og:description" content="赵与你一起发现更大的世界。" />
+    <meta property="twitter:description" content="赵与你一起发现更大的世界。" />
     
 
     
@@ -32,15 +33,15 @@
     
     
 
-    <meta name="keyword"  content="赵化冰, zhaohuabing, Zhaohuabing, , 赵化冰的网络日志, 赵化冰的博客, Zhaohuabing Blog, 博客, 个人网站, 互联网, Web, 云原生, PaaS, Istio, Kubernetes, 微服务, Microservice">
+    <meta name="keyword"  content=" PaaS, Istio, Kubernetes, Microservice">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Huabing Blog | 赵化冰的博客 | Zhaohuabing Blog</title>
+    <title>国强的Blog | </title>
 
     <link rel="canonical" href="/">
 
     
-    
+
     
     <link rel="stylesheet" href="/css/bootstrap.min.css">
 
@@ -76,6 +77,23 @@
 
 
 
+    <style>
+         
+        header.intro-header {
+            height: 60px;
+        }
+         
+        header.intro-header-10vh {
+            height: 10vh;
+        }
+         
+        html, body {
+            height: 10vh;
+        }
+    </style>
+</head>
+<body>
+
 
 
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -89,7 +107,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Huabing Blog</a>
+            <a class="navbar-brand" href="/">国强的Blog</a>
         </div>
 
         
@@ -118,10 +136,6 @@
                     
 		    
                         <li><a href="/archive//">ARCHIVE</a></li>
-                    
-                        <li><a href="/notes//">NOTES</a></li>
-                    
-                        <li><a href="/about//">ABOUT</a></li>
                     
 		            <li>
                         <a href="/search"><i class="fa fa-search"></i></a>
@@ -164,19 +178,17 @@
 
 
 
+
 <header class="intro-header" style="background-image: url('/img/home-bg-jeep.jpg')">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>Huabing Blog </h1>
-                    
-		    <span class="subheading">路在脚下，心向远方</span>
-                </div>
+            <div class="col-lg-8 col-lg-offset-2 col-md-12 col-md-offset-10 ">
+
             </div>
         </div>
     </div>
 </header>
+
 
 
 
@@ -196,24 +208,47 @@
 <div data-pagefind-ignore="all">
 
 <div class="post-preview">
-    <a href="https://zhaohuabing.com/2017/11/04/istio-install_and_example/">
+    <a href="https://zhaohuabing.com/2018/03/29/what-is-service-mesh-and-istio/">
         <h2 class="post-title">
-            Istio及Bookinfo示例程序安装试用笔记
+            谈谈微服务架构中的基础设施：Service Mesh与Istio
         </h2>
 	
         <h3 class="post-subtitle">
-            手把手教你从零搭建Istio及Bookinfo示例程序
+            Service Mesh模式及Istio开源项目介绍
         </h3>
 	
         <div class="post-content-preview">
 	
-            Istio是来自Google，IBM和Lyft的一个Service Mesh（服务网格）开源项目，是Google继Kubernetes之后的又一大作,本文将演示如何从裸机开始从零搭建Istio及Bookinfo示例程序。
+            作为一种架构模式，微服务将复杂系统切分为数十乃至上百个小服务，每个服务负责实现一个独立的业务逻辑。这些小服务易于被小型的软件工程师团队所理解和修改，并带来了语言和框架选择灵活性，缩短应用开发上线时间，可根据不同的工作负载和资源要求对服务进行独立缩扩容等优势。另一方面，当应用被拆分为多个微服务进程后，进程内的方法调用变成了了进程间的远程调用。引入了对大量服务的连接、管理和监控的复杂性,本文介绍了Service Mesh模式如何应对微服务架构的这些挑战，以及Service Mesh的明星开源项目Istio。
         
         </div>
     </a>
     <p class="post-meta">
     
-        Posted by 赵化冰 on Saturday, November 4, 2017
+        Posted by 赵化冰 on Thursday, March 29, 2018
+        
+        
+    
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="https://zhaohuabing.com/2018/03/13/use-docker-behind-http-proxy/">
+        <h2 class="post-title">
+            如何配置docker使用HTTP代理
+        </h2>
+	
+        <div class="post-content-preview">
+	
+            如何配置docker使用HTTP代理
+        
+        </div>
+    </a>
+    <p class="post-meta">
+    
+        Posted by 赵化冰 on Tuesday, March 13, 2018
         
         
     
@@ -291,7 +326,7 @@
            <ul class="list-inline">
                
                <li>
-                   <a href="mailto:youremail@gmail.com">
+                   <a href="mailto:gqhao0521@gmail.com">
                       <span class="fa-stack fa-lg">
                           <i class="fa fa-circle fa-stack-2x"></i>
                           <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
@@ -304,18 +339,9 @@
                
                
                
-               <li>
-                   <a target="_blank" href="/your%20wechat%20qr%20code%20image">
-                       <span class="fa-stack fa-lg">
-                           <i class="fas fa-circle fa-stack-2x"></i>
-                           <i class="fab fa-weixin fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
                
                <li>
-                   <a target="_blank" href="https://github.com/yourgithub">
+                   <a target="_blank" href="https://github.com/qghao">
                        <span class="fa-stack fa-lg">
                            <i class="fas fa-circle fa-stack-2x"></i>
                            <i class="fab fa-github fa-stack-1x fa-inverse"></i>
@@ -326,26 +352,8 @@
                
                
                
-               <li>
-                   <a target="_blank" href="https://www.linkedin.com/in/yourlinkedinid">
-                       <span class="fa-stack fa-lg">
-                           <i class="fas fa-circle fa-stack-2x"></i>
-                           <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
                
                
-               
-                    <li>
-                        <a target="_blank" href="https://stackoverflow.com/users/yourstackoverflowid">
-                            <span class="fa-stack fa-lg">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-            
             
             
                
@@ -367,38 +375,14 @@
             
             
                
-            
-               
                     <a href="/tags/docker" title="docker">
                         docker
                     </a>
                
             
                
-            
-               
-                    <a href="/tags/istio" title="istio">
-                        istio
-                    </a>
-               
-            
-               
-                    <a href="/tags/kubernetes" title="kubernetes">
-                        kubernetes
-                    </a>
-               
-            
-               
-                    <a href="/tags/microservice" title="microservice">
-                        microservice
-                    </a>
-               
-            
-               
-            
-               
-                    <a href="/tags/security" title="security">
-                        security
+                    <a href="/tags/mysql" title="mysql">
+                        mysql
                     </a>
                
             
@@ -409,15 +393,9 @@
                
             
                
-                    <a href="/tags/tips" title="tips">
-                        tips
+                    <a href="/tags/travel" title="travel">
+                        travel
                     </a>
-               
-            
-               
-            
-               
-            
                
             
         </div>
@@ -431,7 +409,7 @@
         <h5>FRIENDS</h5>
         <ul class="list-inline">
             
-            <li><a target="_blank" href="https://zhaozhihan.com">Linda的博客</a></li>
+            <li><a target="_blank" href="http://www.glmapper.com/">磊叔的博客</a></li>
             
         </ul>
     </section>
@@ -446,96 +424,19 @@
 
 
 
+
 <footer>
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">                  
-                    
-                    <li>
-                        <a href="mailto:youremail@gmail.com">
-                            <span class="fa-stack fa-lg">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-		           
-                    
-                    
-                    
-                    
-
-		            
-                    
-                    <li>
-                        <a target="_blank" href="/your%20wechat%20qr%20code%20image">
-                            <span class="fa-stack fa-lg">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-weixin fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-		            
-                    
-                    <li>
-                        <a target="_blank" href="https://github.com/yourgithub">
-                            <span class="fa-stack fa-lg">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-		            
-                    
-                    
-                    
-                    <li>
-                        <a target="_blank" href="https://www.linkedin.com/in/yourlinkedinid">
-                            <span class="fa-stack fa-lg">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-		           
-                    
-                    
-                    <li>
-                        <a target="_blank" href="https://stackoverflow.com/users/yourstackoverflowid">
-                            <span class="fa-stack fa-lg">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    
-                    
-                    
-            
-            
-            
-           
-                   <li>
-                       <a href='/index.xml' rel="alternate" type="application/rss+xml" title="Huabing Blog" >
-                           <span class="fa-stack fa-lg">
-                               <i class="fas fa-circle fa-stack-2x"></i>
-                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
-                           </span>
-                       </a>
-                   </li>
-            
-             </ul>
 		<p class="copyright text-muted">
-                    Copyright &copy; Huabing Blog 2023
+                    Copyright &copy; 国强的Blog 2023
                     <br>
-                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                        By <a href="https://github.com/Qghao">haoguoqiang</a> |
                     <iframe
                         style="margin-left: 2px; margin-bottom:-5px;"
                         frameborder="0" scrolling="0" width="100px" height="20px"
-                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                        src="https://ghbtns.com/github-btn.html?user=qghao&repo=qghao.github.io&type=star&count=true" >
                     </iframe>
                 </p>
             </div>
@@ -652,3 +553,4 @@
 
 </body>
 </html>
+
