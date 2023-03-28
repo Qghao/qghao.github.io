@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Docker on 国强的Blog</title>
-    <link>https://zhaohuabing.com/tags/docker/</link>
+    <link>https://qghao.github.io/tags/docker/</link>
     <description>Recent content in Docker on 国强的Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 13 Mar 2018 18:00:00 +0000</lastBuildDate><atom:link href="https://zhaohuabing.com/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Mar 2018 18:00:00 +0000</lastBuildDate><atom:link href="https://qghao.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>如何配置docker使用HTTP代理</title>
-      <link>https://zhaohuabing.com/2018/03/13/use-docker-behind-http-proxy/</link>
+      <link>https://qghao.github.io/2018/03/13/use-docker-behind-http-proxy/</link>
       <pubDate>Tue, 13 Mar 2018 18:00:00 +0000</pubDate>
       
-      <guid>https://zhaohuabing.com/2018/03/13/use-docker-behind-http-proxy/</guid>
+      <guid>https://qghao.github.io/2018/03/13/use-docker-behind-http-proxy/</guid>
       <description>&lt;h2 id=&#34;ubuntu&#34;&gt;Ubuntu&lt;/h2&gt;
 &lt;h3 id=&#34;设置docker使用http-proxy&#34;&gt;设置docker使用http proxy&lt;/h3&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo /etc/default/docker
