@@ -227,7 +227,7 @@
 </span></span><span style="display:flex;"><span> 
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">insert</span> <span style="color:#ff79c6">into</span> T <span style="color:#ff79c6">values</span>(<span style="color:#bd93f9">100</span>,<span style="color:#bd93f9">1</span>, <span style="color:#f1fa8c">&#39;aa&#39;</span>),(<span style="color:#bd93f9">200</span>,<span style="color:#bd93f9">2</span>,<span style="color:#f1fa8c">&#39;bb&#39;</span>),(<span style="color:#bd93f9">300</span>,<span style="color:#bd93f9">3</span>,<span style="color:#f1fa8c">&#39;cc&#39;</span>),(<span style="color:#bd93f9">500</span>,<span style="color:#bd93f9">5</span>,<span style="color:#f1fa8c">&#39;ee&#39;</span>),(<span style="color:#bd93f9">600</span>,<span style="color:#bd93f9">6</span>,<span style="color:#f1fa8c">&#39;ff&#39;</span>),(<span style="color:#bd93f9">700</span>,<span style="color:#bd93f9">7</span>,<span style="color:#f1fa8c">&#39;gg&#39;</span>);
 </span></span></code></pre></div><p>
-  <img src="images/dcda101051f28502bd5c4402b292e38d.png" alt="img">
+  <img src="/images/dcda101051f28502bd5c4402b292e38d_images.png" alt="img">
 
 </p>
 <p>图 1 <strong>InnoDB</strong> 的索引组织结构</p>
@@ -268,7 +268,7 @@
 <p>这里，我先和你说结论吧。<strong>B+ 树这种索引结构，可以利用索引的“最左前缀”，来定位记录。</strong></p>
 <p>为了直观地说明这个概念，我们用（name，age）这个联合索引来分析。</p>
 <p>
-  <img src="images/89f74c631110cfbc83298ef27dcd6370.jpg" alt="img">
+  <img src="/images/89f74c631110cfbc83298ef27dcd6370.jpg" alt="img">
 
 </p>
 <p>图 2 （name，age）索引示意图</p>
@@ -292,12 +292,12 @@
 <p>而 MySQL 5.6 引入的索引下推优化（index condition pushdown)， 可以在索引遍历过程中，对索引中包含的字段先做判断，直接过滤掉不满足条件的记录，减少回表次数。</p>
 <p>图 3 和图 4，是这两个过程的执行流程图。</p>
 <p>
-  <img src="images/b32aa8b1f75611e0759e52f5915539ac.jpg" alt="img">
+  <img src="/images/b32aa8b1f75611e0759e52f5915539ac.jpg" alt="img">
 
 </p>
 <p>图 3 无索引下推执行流程</p>
 <p>
-  <img src="images/76e385f3df5a694cc4238c7b65acfe1b.jpg" alt="img">
+  <img src="/images/76e385f3df5a694cc4238c7b65acfe1b.jpg" alt="img">
 
 </p>
 <p>图 4 索引下推执行流程</p>

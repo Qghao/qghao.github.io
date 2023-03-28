@@ -222,7 +222,7 @@
 <p>现在我要问你的是，从性能的角度考虑，你选择唯一索引还是普通索引呢？选择的依据是什么呢？</p>
 <p>简单起见，我们还是用第 <strong>4</strong> 篇文章 [<strong>深入浅出索引（上）</strong>]中的例子来说明，假设字段 <strong>k</strong> 上的值都不重复。</p>
 <p>
-  <img src="images/1ed9536031d6698570ea175a7b7f9a46.png" alt="img">
+  <img src="/images/1ed9536031d6698570ea175a7b7f9a46.png" alt="img">
 
 </p>
 <p>图 1 InnoDB 的索引组织结构</p>
@@ -283,7 +283,7 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scss" data-lang="scss"><span style="display:flex;"><span><span style="color:#ff79c6">mysql</span><span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">insert</span> <span style="color:#ff79c6">into</span> <span style="color:#ff79c6">t</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">id</span><span style="color:#ff79c6">,</span><span style="color:#ff79c6">k</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">values</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">id1</span><span style="color:#ff79c6">,</span><span style="color:#ff79c6">k1</span><span style="color:#ff79c6">),(</span><span style="color:#ff79c6">id2</span><span style="color:#ff79c6">,</span><span style="color:#ff79c6">k2</span><span style="color:#ff79c6">)</span>;
 </span></span></code></pre></div><p>这里，我们假设当前 k 索引树的状态，查找到位置后，k1 所在的数据页在内存 (InnoDB buffer pool) 中，k2 所在的数据页不在内存中。如图 2 所示是带 change buffer 的更新状态图。</p>
 <p>
-  <img src="images/980a2b786f0ea7adabef2e64fb4c4ca3.png" alt="img">
+  <img src="/images/980a2b786f0ea7adabef2e64fb4c4ca3.png" alt="img">
 
 </p>
 <p>图 2 带 change buffer 的更新过程</p>
@@ -300,7 +300,7 @@
 <p>比如，我们现在要执行 select * from t where k in (k1, k2)。这里，我画了这两个读请求的流程图。</p>
 <p>如果读语句发生在更新语句后不久，内存中的数据都还在，那么此时的这两个读操作就与系统表空间（ibdata1）和 redo log（ib_log_fileX）无关了。所以，我在图中就没画出这两部分。</p>
 <p>
-  <img src="images/6dc743577af1dbcbb8550bddbfc5f98e.png" alt="img">
+  <img src="/images/6dc743577af1dbcbb8550bddbfc5f98e.png" alt="img">
 
 </p>
 <p>图 3 带 change buffer 的读过程</p>
@@ -325,12 +325,12 @@
 <h2 id="上期问题时间">上期问题时间</h2>
 <p>上期的问题是：如何构造一个“数据无法修改”的场景。评论区里已经有不少同学给出了正确答案，这里我再描述一下。</p>
 <p>
-  <img src="images/be7a4d8af04cdf93aaa11108933559ae.png" alt="img">
+  <img src="/images/be7a4d8af04cdf93aaa11108933559ae.png" alt="img">
 
 这样，session A 看到的就是我截图的效果了。</p>
 <p>其实，还有另外一种场景，同学们在留言区都还没有提到。</p>
 <p>
-  <img src="images/e24a0689571337959138d787c408defa.png" alt="img">
+  <img src="/images/e24a0689571337959138d787c408defa.png" alt="img">
 
 </p>
 <p>这个操作序列跑出来，session A 看的内容也是能够复现我截图的效果的。这个 session B’启动的事务比 A 要早，其实是上期我们描述事务版本的可见性规则时留的彩蛋，因为规则里还有一个“活跃事务的判断”，我是准备留到这里再补充的。</p>

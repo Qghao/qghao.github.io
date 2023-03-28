@@ -224,7 +224,7 @@
 <p>不论是脏页还是干净页，都在内存中。在这个例子里，内存对应的就是掌柜的记忆。</p>
 <p>接下来，我们用一个示意图来展示一下“孔乙己赊账”的整个操作过程。假设原来孔乙己欠账 10 文，这次又要赊 9 文。</p>
 <p>
-  <img src="images/349cfab9e4f5d2a75e07b2132a301fda.jpeg" alt="img">
+  <img src="/images/349cfab9e4f5d2a75e07b2132a301fda.jpeg" alt="img">
 
 </p>
 <p>图 1 “孔乙己赊账”更新和 flush 过程</p>
@@ -235,7 +235,7 @@
 <li>第一种场景是，粉板满了，记不下了。这时候如果再有人来赊账，掌柜就只得放下手里的活儿，将粉板上的记录擦掉一些，留出空位以便继续记账。当然在擦掉之前，他必须先将正确的账目记录到账本中才行。 这个场景，对应的就是 InnoDB 的 redo log 写满了。这时候系统会停止所有更新操作，把 checkpoint 往前推进，redo log 留出空间可以继续写。我在第二讲画了一个 redo log 的示意图，这里我改成环形，便于大家理解。</li>
 </ul>
 <p>
-  <img src="images/a25bdbbfc2cfc5d5e20690547fe7f2e5.jpg" alt="img">
+  <img src="/images/a25bdbbfc2cfc5d5e20690547fe7f2e5.jpg" alt="img">
 
 </p>
 <p>图 2 redo log 状态图</p>
@@ -290,7 +290,7 @@
 <p>然后，<strong>根据上述算得的 F1(M) 和 F2(N) 两个值，取其中较大的值记为 R，之后引擎就可以按照 innodb_io_capacity 定义的能力乘以 R% 来控制刷脏页的速度。</strong></p>
 <p>上述的计算流程比较抽象，不容易理解，所以我画了一个简单的流程图。图中的 F1、F2 就是上面我们通过脏页比例和 redo log 写入速度算出来的两个值。</p>
 <p>
-  <img src="images/cc44c1d080141aa50df6a91067475374.png" alt="img">
+  <img src="/images/cc44c1d080141aa50df6a91067475374.png" alt="img">
 
 </p>
 <p>图 3 InnoDB 刷脏页速度策略</p>

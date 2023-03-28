@@ -220,7 +220,7 @@
 <p>现在，我们就从这个问题开始吧。</p>
 <p>我再放一次两阶段提交的图，方便你学习下面的内容。</p>
 <p>
-  <img src="images/ee9af616e05e4b853eba27048351f62a.jpg" alt="">
+  <img src="/images/ee9af616e05e4b853eba27048351f62a.jpg" alt="">
 
 </p>
 <p>图 1 两阶段提交示意图</p>
@@ -271,7 +271,7 @@
 <p>InnoDB 接入了 MySQL 后，发现既然 binlog 没有崩溃恢复的能力，那就用 InnoDB 原有的 redo log 好了。</p>
 <p>而如果说<strong>实现上的原因</strong>的话，就有很多了。就按照问题中说的，只用 binlog 来实现崩溃恢复的流程，我画了一张示意图，这里就没有 redo log 了。</p>
 <p>
-  <img src="images/eb838b87e9c20fa00aca50ef154f2a63.jpg" alt="img">
+  <img src="/images/eb838b87e9c20fa00aca50ef154f2a63.jpg" alt="img">
 
 </p>
 <p>图 2 只用 binlog 支持崩溃恢复</p>
@@ -351,7 +351,7 @@
 <p>顺便说明一下，“like”是关键字，我一般不建议使用关键字作为库名、表名、字段名或索引名。</p>
 <p>我把他的疑问翻译一下，在并发场景下，同时有两个人，设置为关注对方，就可能导致无法成功加为朋友关系。</p>
 <p>现在，我用你已经熟悉的时刻顺序表的形式，把这两个事务的执行语句列出来：
-  <img src="images/c45063baf1ae521bf5d98b6d7c0e0ced.png" alt="img">
+  <img src="/images/c45063baf1ae521bf5d98b6d7c0e0ced.png" alt="img">
 
 </p>
 <p>图 3 并发“喜欢”逻辑操作顺序</p>
@@ -404,7 +404,7 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mysql&gt; update t <span style="color:#8be9fd;font-style:italic">set</span> <span style="color:#8be9fd;font-style:italic">a</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">2</span> where <span style="color:#8be9fd;font-style:italic">id</span><span style="color:#ff79c6">=</span>1;
 </span></span></code></pre></div><p>你会看到这样的结果：</p>
 <p>
-  <img src="images/367b3f299b94353f32f75ea825391170.png" alt="img">
+  <img src="/images/367b3f299b94353f32f75ea825391170.png" alt="img">
 
 结果显示，匹配 (rows matched) 了一行，修改 (Changed) 了 0 行。</p>
 <p>仅从现象上看，MySQL 内部在处理这个命令的时候，可以有以下三种选择：</p>

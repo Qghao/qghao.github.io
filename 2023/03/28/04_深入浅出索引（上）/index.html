@@ -224,7 +224,7 @@
 <p>不可避免地，多个 key 值经过哈希函数的换算，会出现同一个值的情况。处理这种情况的一种方法是，拉出一个链表。</p>
 <p>假设，你现在维护着一个身份证信息和姓名的表，需要根据身份证号查找对应的名字，这时对应的哈希索引的示意图如下所示：</p>
 <p>
-  <img src="images/0c62b601afda86fe5d0fe57346ace957.png" alt="img">
+  <img src="/images/0c62b601afda86fe5d0fe57346ace957.png" alt="img">
 
 </p>
 <p>图 1 哈希表示意图</p>
@@ -234,7 +234,7 @@
 <p>所以，<strong>哈希表这种结构适用于只有等值查询的场景</strong>，比如 Memcached 及其他一些 NoSQL 引擎。</p>
 <p>而<strong>有序数组在等值查询和范围查询场景中的性能就都非常优秀</strong>。还是上面这个根据身份证号查名字的例子，如果我们使用有序数组来实现的话，示意图如下所示：</p>
 <p>
-  <img src="images/bfc907a92f99cadf5493cf0afac9ca49.png" alt="img">
+  <img src="/images/bfc907a92f99cadf5493cf0afac9ca49.png" alt="img">
 
 </p>
 <p>图 2 有序数组示意图</p>
@@ -244,7 +244,7 @@
 <p>所以，<strong>有序数组索引只适用于静态存储引擎</strong>，比如你要保存的是 2017 年某个城市的所有人口信息，这类不会再修改的数据。</p>
 <p>二叉搜索树也是课本里的经典数据结构了。还是上面根据身份证号查名字的例子，如果我们用二叉搜索树来实现的话，示意图如下所示：</p>
 <p>
-  <img src="images/04fb9d24065635a6a637c25ba9ddde68.png" alt="img">
+  <img src="/images/04fb9d24065635a6a637c25ba9ddde68.png" alt="img">
 
 </p>
 <p>图 3 二叉搜索树示意图</p>
@@ -272,7 +272,7 @@
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">index</span> (k))engine<span style="color:#ff79c6">=</span>InnoDB;
 </span></span></code></pre></div><p>表中 R1~R5 的 (ID,k) 值分别为 (100,1)、(200,2)、(300,3)、(500,5) 和 (600,6)，两棵树的示例示意图如下。</p>
 <p>
-  <img src="images/dcda101051f28502bd5c4402b292e38d.png" alt="img">
+  <img src="/images/dcda101051f28502bd5c4402b292e38d.png" alt="img">
 
 </p>
 <p>图 4 InnoDB 的索引组织结构</p>

@@ -232,7 +232,7 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>mysql<span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">create</span> <span style="color:#ff79c6">table</span> T(<span style="color:#ff79c6">c</span> <span style="color:#8be9fd;font-style:italic">int</span>) engine<span style="color:#ff79c6">=</span>InnoDB;
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">insert</span> <span style="color:#ff79c6">into</span> T(<span style="color:#ff79c6">c</span>) <span style="color:#ff79c6">values</span>(<span style="color:#bd93f9">1</span>);
 </span></span></code></pre></div><p>
-  <img src="images/7dea45932a6b722eb069d2264d0066f8.png" alt="img">
+  <img src="/images/7dea45932a6b722eb069d2264d0066f8.png" alt="img">
 
 我们来看看在不同的隔离级别下，事务 A 会有哪些不同的返回结果，也就是图里面 V1、V2、V3 的返回值分别是什么。</p>
 <ul>
@@ -263,7 +263,7 @@
 <p>在 MySQL 中，实际上每条记录在更新的时候都会同时记录一条回滚操作。记录上的最新值，通过回滚操作，都可以得到前一个状态的值。</p>
 <p>假设一个值从 1 被按顺序改成了 2、3、4，在回滚日志里面就会有类似下面的记录。</p>
 <p>
-  <img src="images/d9c313809e5ac148fc39feff532f0fee.png" alt="img">
+  <img src="/images/d9c313809e5ac148fc39feff532f0fee.png" alt="img">
 
 当前值是 4，但是在查询这条记录的时候，不同时刻启动的事务会有不同的 read-view。如图中看到的，在视图 A、B、C 里面，这一个记录的值分别是 1、2、4，同一条记录在系统中可以存在多个版本，就是数据库的多版本并发控制（MVCC）。对于 read-view A，要得到 1，就必须将当前值依次执行图中所有的回滚操作得到。</p>
 <p>同时你会发现，即使现在有另外一个事务正在将 4 改成 5，这个事务跟 read-view A、B、C 对应的事务是不会冲突的。</p>

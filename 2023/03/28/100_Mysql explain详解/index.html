@@ -228,7 +228,7 @@
 </span></span><span style="display:flex;"><span>AND s.uid<span style="color:#ff79c6">=</span>f.uid
 </span></span></code></pre></div><p>执行后的结果，如下图所示</p>
 <p>
-  <img src="images/SouthEast.jpeg" alt="img">
+  <img src="/images/SouthEast.jpeg" alt="img">
 
 </p>
 <p>这里面有下面几个结果，下面我们一个个来看一下</p>
@@ -237,7 +237,7 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#ff79c6">EXPLAIN</span> <span style="color:#ff79c6">SELECT</span> <span style="color:#ff79c6">*</span> <span style="color:#ff79c6">FROM</span> (<span style="color:#ff79c6">SELECT</span><span style="color:#ff79c6">*</span> <span style="color:#ff79c6">FROM</span> uchome_space <span style="color:#ff79c6">LIMIT</span> <span style="color:#bd93f9">10</span>)<span style="color:#ff79c6">AS</span> s
 </span></span></code></pre></div><p>它的执行结果为：</p>
 <p>
-  <img src="images/SouthEast-16598858078253.jpeg" alt="img">
+  <img src="/images/SouthEast-16598858078253.jpeg" alt="img">
 
 </p>
 <p>可以看到这时的id变化了</p>
@@ -251,7 +251,7 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#ff79c6">explain</span> <span style="color:#ff79c6">select</span>  <span style="color:#ff79c6">*</span>  <span style="color:#ff79c6">from</span> uchome_space <span style="color:#ff79c6">limit</span> <span style="color:#bd93f9">10</span> <span style="color:#ff79c6">union</span> <span style="color:#ff79c6">select</span> <span style="color:#ff79c6">*</span> <span style="color:#ff79c6">from</span> uchome_space <span style="color:#ff79c6">limit</span> <span style="color:#bd93f9">10</span>,<span style="color:#bd93f9">10</span>
 </span></span></code></pre></div><p>会有如下结果</p>
 <p>
-  <img src="images/SouthEast-16598860821086.jpeg" alt="img">
+  <img src="/images/SouthEast-16598860821086.jpeg" alt="img">
 
 </p>
 <p>第二条语句使用了<strong>union</strong></p>
@@ -270,13 +270,13 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#ff79c6">explain</span> <span style="color:#ff79c6">select</span> <span style="color:#ff79c6">*</span> <span style="color:#ff79c6">from</span> <span style="color:#ff79c6">`</span>asj_admin_log<span style="color:#ff79c6">`</span> <span style="color:#ff79c6">limit</span> <span style="color:#bd93f9">1</span>
 </span></span></code></pre></div><p>结果如下</p>
 <p>
-  <img src="images/SouthEast-16598872012339.jpeg" alt="img">
+  <img src="/images/SouthEast-16598872012339.jpeg" alt="img">
 
 </p>
 <p>虽然只搜索一条数据，但是因为没有用到指定的索引，所以不会使用 <strong>const</strong>，继续看下面这个</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#ff79c6">explain</span> <span style="color:#ff79c6">SELECT</span> <span style="color:#ff79c6">*</span> <span style="color:#ff79c6">FROM</span> <span style="color:#ff79c6">`</span>asj_admin_log<span style="color:#ff79c6">`</span> <span style="color:#ff79c6">where</span> log_id <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">111</span>
 </span></span></code></pre></div><p>
-  <img src="images/SouthEast-165988724784912.jpeg" alt="img">
+  <img src="/images/SouthEast-165988724784912.jpeg" alt="img">
 
 </p>
 <p><strong>log_id</strong> 是主键，所以使用了 <strong>const</strong>。所以说可以理解为 <strong>const</strong> 是最优化的</p>
@@ -285,7 +285,7 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#ff79c6">explain</span> <span style="color:#ff79c6">select</span> <span style="color:#ff79c6">*</span> <span style="color:#ff79c6">from</span> uchome_spacefield,uchome_space <span style="color:#ff79c6">where</span> uchome_spacefield.uid <span style="color:#ff79c6">=</span> uchome_space.uid
 </span></span></code></pre></div><p>得到的结果是下图所示。很明显，<strong>mysql</strong> 使用 <strong>eq_ref</strong> 联接来处理 <strong>uchome_space</strong> 表。</p>
 <p>
-  <img src="images/SouthEast-165988739401915.png" alt="img">
+  <img src="/images/SouthEast-165988739401915.png" alt="img">
 
 </p>
 <h3 id="ref">ref</h3>
@@ -318,13 +318,13 @@
 <p>出现using temporary就说明语句需要优化了，举个例子来说</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#ff79c6">EXPLAIN</span> <span style="color:#ff79c6">SELECT</span> ads.id <span style="color:#ff79c6">FROM</span> ads, city <span style="color:#ff79c6">WHERE</span>   city.city_id <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">8005</span>   <span style="color:#ff79c6">AND</span> ads.status <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;online&#39;</span>   <span style="color:#ff79c6">AND</span> city.ads_id<span style="color:#ff79c6">=</span>ads.id <span style="color:#ff79c6">ORDER</span> <span style="color:#ff79c6">BY</span> ads.id <span style="color:#ff79c6">desc</span>
 </span></span></code></pre></div><p>
-  <img src="images/image-20220829092000079.png" alt="image-20220829092000079">
+  <img src="/images/image-20220829092000079.png" alt="image-20220829092000079">
 
 </p>
 <p>这条语句会使用using temporary,而下面这条语句则不会</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#ff79c6">EXPLAIN</span> <span style="color:#ff79c6">SELECT</span> ads.id <span style="color:#ff79c6">FROM</span> ads, city <span style="color:#ff79c6">WHERE</span>   city.city_id <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">8005</span>   <span style="color:#ff79c6">AND</span> ads.status <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;online&#39;</span>   <span style="color:#ff79c6">AND</span> city.ads_id<span style="color:#ff79c6">=</span>ads.id <span style="color:#ff79c6">ORDER</span> BYcity.ads_id <span style="color:#ff79c6">desc</span>
 </span></span></code></pre></div><p>
-  <img src="images/image-20220829092032304.png" alt="image-20220829092032304">
+  <img src="/images/image-20220829092032304.png" alt="image-20220829092032304">
 
 </p>
 <p>这是为什么呢？他俩之间只是一个order by不同，MySQL 表关联的算法是 Nest Loop Join，是通过驱动表的结果集作为循环基础数据，然后一条一条地通过该结果集中的数据作为过滤条件到下一个表中查询数据，然后合并结果。EXPLAIN 结果中，第一行出现的表就是驱动表（Important!）以上两个查询语句，驱动表都是 city，如上面的执行计划所示！</p>

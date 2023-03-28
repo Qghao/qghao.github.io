@@ -232,14 +232,14 @@
 <p>前面我们介绍过索引，所以你现在就很清楚了，为避免全表扫描，我们需要在 city 字段加上索引。</p>
 <p>在 city 字段上创建索引之后，我们用 explain 命令来看看这个语句的执行情况。</p>
 <p>
-  <img src="images/826579b63225def812330ef6c344a303.png" alt="img">
+  <img src="/images/826579b63225def812330ef6c344a303.png" alt="img">
 
 </p>
 <p>图 1 使用 explain 命令查看语句的执行情况</p>
 <p>Extra 这个字段中的“Using filesort”表示的就是需要排序，MySQL 会给每个线程分配一块内存用于排序，称为 sort_buffer。</p>
 <p>为了说明这个 SQL 查询语句的执行过程，我们先来看一下 city 这个索引的示意图。</p>
 <p>
-  <img src="images/5334cca9118be14bde95ec94b02f0a3e.png" alt="img">
+  <img src="/images/5334cca9118be14bde95ec94b02f0a3e.png" alt="img">
 
 </p>
 <p>图 2 city 字段的索引示意图</p>
@@ -256,7 +256,7 @@
 </ol>
 <p>我们暂且把这个排序过程，称为全字段排序，执行流程的示意图如下所示，下一篇文章中我们还会用到这个排序。</p>
 <p>
-  <img src="images/6c821828cddf46670f9d56e126e3e772.jpg" alt="img">
+  <img src="/images/6c821828cddf46670f9d56e126e3e772_images.jpg" alt="img">
 
 </p>
 <p>图 3 全字段排序</p>
@@ -282,7 +282,7 @@
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">select</span> <span style="color:#ff79c6">@</span>b<span style="color:#ff79c6">-@</span>a;
 </span></span></code></pre></div><p>这个方法是通过查看 OPTIMIZER_TRACE 的结果来确认的，你可以从 number_of_tmp_files 中看到是否使用了临时文件。</p>
 <p>
-  <img src="images/89baf99cdeefe90a22370e1d6f5e6495.png" alt="img">
+  <img src="/images/89baf99cdeefe90a22370e1d6f5e6495.png" alt="img">
 
 </p>
 <p>图 4 全排序的 OPTIMIZER_TRACE 部分结果</p>
@@ -316,7 +316,7 @@
 </ol>
 <p>这个执行流程的示意图如下，我把它称为 rowid 排序。</p>
 <p>
-  <img src="images/dc92b67721171206a302eb679c83e86d.jpg" alt="img">
+  <img src="/images/dc92b67721171206a302eb679c83e86d_images.jpg" alt="img">
 
 </p>
 <p>图 5 rowid 排序</p>
@@ -327,7 +327,7 @@
 <p>首先，图中的 examined_rows 的值还是 4000，表示用于排序的数据是 4000 行。但是 select @b-@a 这个语句的值变成 5000 了。</p>
 <p>因为这时候除了排序过程外，在排序完成后，还要根据 id 去原表取值。由于语句是 limit 1000，因此会多读 1000 行。</p>
 <p>
-  <img src="images/27f164804d1a4689718291be5d10f89b.png" alt="img">
+  <img src="/images/27f164804d1a4689718291be5d10f89b.png" alt="img">
 
 </p>
 <p>图 6 rowid 排序的 OPTIMIZER_TRACE 部分输出</p>
@@ -351,7 +351,7 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#ff79c6">alter</span> <span style="color:#ff79c6">table</span> t <span style="color:#ff79c6">add</span> <span style="color:#ff79c6">index</span> city_user(city, name);
 </span></span></code></pre></div><p>作为与 city 索引的对比，我们来看看这个索引的示意图。</p>
 <p>
-  <img src="images/f980201372b676893647fb17fac4e2bf.png" alt="img">
+  <img src="/images/f980201372b676893647fb17fac4e2bf.png" alt="img">
 
 </p>
 <p>图 7 city 和 name 联合索引示意图</p>
@@ -364,13 +364,13 @@
 <li>重复步骤 2、3，直到查到第 1000 条记录，或者是不满足 city=&lsquo;杭州’条件时循环结束。</li>
 </ol>
 <p>
-  <img src="images/3f590c3a14f9236f2d8e1e2cb9686692.jpg" alt="img">
+  <img src="/images/3f590c3a14f9236f2d8e1e2cb9686692.jpg" alt="img">
 
 </p>
 <p>图 8 引入 (city,name) 联合索引后，查询语句的执行计划</p>
 <p>可以看到，这个查询过程不需要临时表，也不需要排序。接下来，我们用 explain 的结果来印证一下。</p>
 <p>
-  <img src="images/fc53de303811ba3c46d344595743358a.png" alt="img">
+  <img src="/images/fc53de303811ba3c46d344595743358a.png" alt="img">
 
 </p>
 <p>图 9 引入 (city,name) 联合索引后，查询语句的执行计划</p>
@@ -387,13 +387,13 @@
 <li>重复执行步骤 2，直到查到第 1000 条记录，或者是不满足 city=&lsquo;杭州’条件时循环结束。</li>
 </ol>
 <p>
-  <img src="images/df4b8e445a59c53df1f2e0f115f02cd6.jpg" alt="img">
+  <img src="/images/df4b8e445a59c53df1f2e0f115f02cd6.jpg" alt="img">
 
 </p>
 <p>图 10 引入 (city,name,age) 联合索引后，查询语句的执行流程</p>
 <p>然后，我们再来看看 explain 的结果。</p>
 <p>
-  <img src="images/9e40b7b8f0e3f81126a9171cc22e3423.png" alt="img">
+  <img src="/images/9e40b7b8f0e3f81126a9171cc22e3423.png" alt="img">
 
 </p>
 <p>图 11 引入 (city,name,age) 联合索引后，查询语句的执行计划</p>
@@ -415,7 +415,7 @@
 <p>第一个选项是，MySQL 读出数据，发现值与原来相同，不更新，直接返回，执行结束。这里我们可以用一个锁实验来确认。</p>
 <p>假设，当前表 t 里的值是 (1,2)。</p>
 <p>
-  <img src="images/6d9d8837560d01b57d252c470157ea90.png" alt="img">
+  <img src="/images/6d9d8837560d01b57d252c470157ea90.png" alt="img">
 
 </p>
 <p>图 12 锁验证方式</p>
@@ -423,7 +423,7 @@
 <p>第二个选项是，MySQL 调用了 InnoDB 引擎提供的接口，但是引擎发现值与原来相同，不更新，直接返回。有没有这种可能呢？这里我用一个可见性实验来确认。</p>
 <p>假设当前表里的值是 (1,2)。</p>
 <p>
-  <img src="images/441682b64a3f5dd50f35b12ca4b87c96.png" alt="img">
+  <img src="/images/441682b64a3f5dd50f35b12ca4b87c96.png" alt="img">
 
 </p>
 <p>图 13 可见性验证方式</p>
@@ -434,7 +434,7 @@
 <p>其实 MySQL 是确认了的。只是在这个语句里面，MySQL 认为读出来的值，只有一个确定的 (id=1), 而要写的是 (a=3)，只从这两个信息是看不出来“不需要修改”的。</p>
 <p>作为验证，你可以看一下下面这个例子。</p>
 <p>
-  <img src="images/63dd6df32dacdb827d256e5acb9837c1.png" alt="img">
+  <img src="/images/63dd6df32dacdb827d256e5acb9837c1.png" alt="img">
 
 </p>
 <p>图 14 可见性验证方式 &ndash; 对照</p>
@@ -445,7 +445,7 @@
 <p>同理，如果是 binlog_row_image=NOBLOB, 会读出除 blob 外的所有字段，在我们这个例子里，结果还是“返回 (1,2)”。</p>
 <p>对应的代码如图 15 所示。这是 MySQL 5.6 版本引入的，在此之前我没有看过。所以，特此说明。</p>
 <p>
-  <img src="images/d413b9235d56c62f9829750a68b06b89.png" alt="img">
+  <img src="/images/d413b9235d56c62f9829750a68b06b89.png" alt="img">
 
 </p>
 <p>图 15 binlog_row_image=FULL 读字段逻辑</p>
