@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://qghao.github.io/categories/</loc>
+    <lastmod>2023-03-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://qghao.github.io/post/</loc>
+    <lastmod>2023-03-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://qghao.github.io/tags/</loc>
+    <lastmod>2023-03-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://qghao.github.io/</loc>
+    <lastmod>2023-03-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://qghao.github.io/tags/%E8%AE%BE%E8%AE%A1/</loc>
+    <lastmod>2023-03-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://qghao.github.io/2023/03/30/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/</loc>
+    <lastmod>2023-03-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://qghao.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3/</loc>
+    <lastmod>2023-03-30T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://qghao.github.io/2023/03/28/00_%E5%BC%80%E7%AF%87%E8%AF%8D%20%E8%BF%99%E4%B8%80%E6%AC%A1%EF%BC%8C%E8%AE%A9%E6%88%91%E4%BB%AC%E4%B8%80%E8%B5%B7%E6%9D%A5%E6%90%9E%E6%87%82MySQL/</loc>
     <lastmod>2023-03-28T00:00:00+00:00</lastmod>
   </url><url>
@@ -56,19 +77,7 @@
     <loc>https://qghao.github.io/2023/03/28/17_%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E5%9C%B0%E6%98%BE%E7%A4%BA%E9%9A%8F%E6%9C%BA%E6%B6%88%E6%81%AF%EF%BC%9F/</loc>
     <lastmod>2023-03-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qghao.github.io/categories/</loc>
-    <lastmod>2023-03-28T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://qghao.github.io/tags/mysql/</loc>
-    <lastmod>2023-03-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://qghao.github.io/post/</loc>
-    <lastmod>2023-03-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://qghao.github.io/tags/</loc>
-    <lastmod>2023-03-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://qghao.github.io/</loc>
     <lastmod>2023-03-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://qghao.github.io/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/</loc>

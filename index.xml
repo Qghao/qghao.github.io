@@ -6,7 +6,16 @@
     <description>Recent content on 国强的Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 28 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://qghao.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://qghao.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>设计原则</title>
+      <link>https://qghao.github.io/2023/03/30/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/</link>
+      <pubDate>Thu, 30 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://qghao.github.io/2023/03/30/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/</guid>
+      <description>六大原则 2.1 开闭原则 一个软件实体应当对扩展开放，对修改关闭。即软件实体应尽量在不修改原有代码的情况下进行扩展。 任何软件都需要面临一个很重要的问</description>
+    </item>
+    
     <item>
       <title>00_开篇词 这一次，让我们一起来搞懂MySQL</title>
       <link>https://qghao.github.io/2023/03/28/00_%E5%BC%80%E7%AF%87%E8%AF%8D%20%E8%BF%99%E4%B8%80%E6%AC%A1%EF%BC%8C%E8%AE%A9%E6%88%91%E4%BB%AC%E4%B8%80%E8%B5%B7%E6%9D%A5%E6%90%9E%E6%87%82MySQL/</link>
