@@ -225,12 +225,13 @@ export HTTPS_PROXY=&amp;#34;http://127.0.0.1:3128/&amp;#34;
     </item>
     
     <item>
-      <title>Welcome to Zhaohuabing Blog</title>
+      <title>Hello World, Hello Blog</title>
       <link>https://qghao.github.io/2017/11/03/hello-world/</link>
       <pubDate>Sat, 04 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>https://qghao.github.io/2017/11/03/hello-world/</guid>
-      <description>“Yeah It&amp;rsquo;s on. ” Hello World!</description>
+      <description> “Yeah It&amp;rsquo;s on. ”
+ Hello World! </description>
     </item>
     
   </channel>
